@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Load properties file -->
+	<context:property-placeholder location="classpath:sport.properties" />
+
+    <!-- Define your beans here -->
+    <bean id="myFortune"
+    	class="com.learning.springdemo.HappyFortuneService">
+    </bean>
+    
+     <bean id="myPosts"
+    		class="com.learning.springdemo.constructorinjection.Posts">
+    </bean>
+        
+    <bean id="myBaseBallCoach"
+    		class="com.learning.springdemo.BaseballCoach">
+    		<constructor-arg index="0" ref="myFortune" />
+    		<constructor-arg index="1" ref="myPosts" />
+    		
+    </bean>
+    <bean id="myGolfCoach"
+    		class="com.learning.springdemo.GolfCoach">
+    </bean>
+    
+    <bean id="myCricketCoach"
+    		class="com.learning.springdemo.CricketCoach">
+    		<!-- Set up out setter injection -->
+    		<property name="fortuneService" ref="myFortune" />
+    		
+    		<property name="emailAddress" value="${coach.email}" />
+    		<property name="team" value="${coach.team}" />
+    </bean>
+</beans>
+
+
+
+
+
