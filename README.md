@@ -1,2 +1,2 @@
-# Java-Spring-Beginner-
+# Java-Spring-Beginner
 Learning java spring frm beginning.
