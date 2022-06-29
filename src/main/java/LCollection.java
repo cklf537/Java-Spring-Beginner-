@@ -1,6 +1,12 @@
 public class LCollection {
+     public static void main(String[] args) {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+         /* creating Object of student */
+         Student student = new Student("Jim","Jack","39","22/05/1981");
+         System.out.println(student.getFirstName());
+         System.out.println(student.getLastName());
+
+
     }
 }
+
