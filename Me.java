@@ -16,7 +16,7 @@ public class Me {
     }
 
     public static void getName(){
-        name = "Chandrashekar Boggavarpu";
+        name = "Some name";
         System.out.println(name);
     };
 
